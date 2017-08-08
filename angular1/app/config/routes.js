@@ -1,3 +1,4 @@
+(function() {
 angular.module('primeiraApp').config([
 	'$stateProvider', /* os dois dentro de ui-router*/
 	'$urlRouterProvider',
@@ -13,3 +14,5 @@ angular.module('primeiraApp').config([
 		$urlRouterProvider.otherwise('/dashboard')
 	}
 ])
+})()
+

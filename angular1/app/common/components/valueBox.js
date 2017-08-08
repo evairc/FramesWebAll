@@ -1,3 +1,4 @@
+(function() {
 angular.module('primeiraApp').component('valueBox', {
 	bindings: { /*entradas*/
 		grid: '@',
@@ -26,3 +27,6 @@ angular.module('primeiraApp').component('valueBox', {
 	</div>
 	`
 })
+
+})()
+
