@@ -27,6 +27,36 @@
 			})
 		}
 
+		vm.showTabUpdate = function(billingCycle) { /*recebe o billingCycle pra pegar a linha atual*/
+			vm.billingCycle = billingCycle
+			tabs.show(vm, {tabUpdate: true})
+		}
+
+		vm.showTabDelete = function(billingCycle) {
+			vm.billingCycle = billingCycle
+			tabs.show(vm, {tabDelete: true})
+		}
+
+		vm.update = function() {
+			const updateUrl = `${url}/${vm.billingCycle._id}`
+			$http.put(updateUrl, vm.billingCycle).then(function(response) {
+				vm.refresh()
+				msgs.addSuccess('Operação de atualização realizada com sucesso!')
+			}).catch(function(response) {
+				msgs.addError(response.data.errors)
+			})
+		}
+
+		vm.delete = function() {
+			const deleteUrl = `${url}/${vm.billingCycle._id}`
+			$http.delete(deleteUrl, vm.billingCycle).then(function(response) {
+				vm.refresh()
+				msgs.addSuccess('Operação de exclusão realizada com sucesso!')
+			}).catch(function(response) {
+				msgs.addError(response.data.errors)
+			})
+		}
+
 		vm.refresh()
 	}
 })()
