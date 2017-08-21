@@ -1,7 +1,5 @@
-(function() {
 angular.module('primeiraApp', [
-	'ui.router',
-	'ngAnimate',
-	'toastr'
+  'ui.router',
+  'ngAnimate',
+  'toastr'
 ])
-})()
